@@ -1,0 +1,64 @@
+.class Lh/b/j1$b;
+.super Ljava/lang/Object;
+.source ""
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lh/b/j1;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0xa
+    name = "b"
+.end annotation
+
+
+# instance fields
+.field final n:Ljava/lang/Runnable;
+
+.field o:Z
+
+.field p:Z
+
+
+# direct methods
+.method constructor <init>(Ljava/lang/Runnable;)V
+    .registers 3
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const-string v0, "task"
+
+    invoke-static {p1, v0}, Lg/c/c/a/l;->p(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Runnable;
+
+    iput-object p1, p0, Lh/b/j1$b;->n:Ljava/lang/Runnable;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public run()V
+    .registers 2
+
+    iget-boolean v0, p0, Lh/b/j1$b;->o:Z
+
+    if-nez v0, :cond_c
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lh/b/j1$b;->p:Z
+
+    iget-object v0, p0, Lh/b/j1$b;->n:Ljava/lang/Runnable;
+
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    :cond_c
+    return-void
+.end method
